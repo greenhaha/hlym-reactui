@@ -1,6 +1,6 @@
 {
   "name": "hlym-reactui",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "",
   "typings": "lib/index.d.ts",
   "main": "lib/index.js",
