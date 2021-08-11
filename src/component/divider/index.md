@@ -1,11 +1,8 @@
 ---
 title: Divider 分割线
 group:
-  title: 布局组件
-  path: /basis
-nav:
-  title: 组件库
-  path: /components
+  title: 常规组建
+  path: /base
 ---
 
 # Divider 分割线

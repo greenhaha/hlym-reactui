@@ -4,8 +4,8 @@
  *
  */
 import React from 'react';
-import { Divider } from '@hlym/components';
-
+import Divider from '../index';
+import '../style'
 export default () =>  {
     return (
         <>

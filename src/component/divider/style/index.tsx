@@ -1,2 +1,1 @@
-import '../../../style/index.scss';
-import './index.scss'
+import './index.less'

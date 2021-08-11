@@ -4,7 +4,7 @@
  *
  */
  import React from 'react';
- import { Divider } from '@hlym/components';
+ import Divider from '../index';
  
  export default () =>  {
      return (

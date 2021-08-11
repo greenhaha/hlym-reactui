@@ -1,2 +1,7 @@
-export { default as Divider } from './component/divider';
-export { default as Button } from './component/button';
+import Divider from './component/divider/index';
+import Button from './component/button/index';
+
+export {
+    Divider,
+    Button
+  }

@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = props => {
     disabled = false,
     children,
     className,
-    prefixCls = 'cz-btn',
+    prefixCls = 'hl-btn',
     onClick,
   } = props;
 

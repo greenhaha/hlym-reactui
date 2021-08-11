@@ -1,10 +1,11 @@
 {
   "name": "hlym-reactui",
-  "version": "0.0.8",
+  "version": "0.0.22",
   "description": "",
   "typings": "lib/index.d.ts",
   "main": "lib/index.js",
   "module": "esm/index.js",
+  "style": "lib/index.css",
   "authors": {
     "name": "greenhaha",
     "email": "a15114101085@gmail.com"
@@ -109,6 +110,7 @@
     "*.less"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.14.8"
+    "@babel/runtime": "^7.14.8",
+    "classnames": "^2.3.1"
   }
 }
