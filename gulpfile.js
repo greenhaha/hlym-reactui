@@ -11,7 +11,7 @@ const paths = {
     esm: 'esm',
     dist: 'dist',
   },
-  styles: 'src/**/*.less',
+  styles: 'src/component/*.less',
   scripts: ['src/**/*.{ts,tsx}', '!src/**/demo/*.{ts,tsx}', '!src/**/__tests__/*.{ts,tsx}'],
 };
 
@@ -95,7 +95,17 @@ function less2css() {
     .pipe(gulp.dest(paths.dest.esm));
 }
 
-const build = gulp.parallel(buildScripts, copyLess, less2css);
+function mainLess2css(){
+  return gulp
+    .src('src/style/*.less')
+    .pipe(less()) // 处理less文件
+    .pipe(autoprefixer()) // 根据browserslistrc增加前缀
+    .pipe(cssnano({ zindex: false, reduceIdents: false })) // 压缩
+    .pipe(gulp.dest(paths.dest.lib))
+    .pipe(gulp.dest(paths.dest.esm));
+}
+
+const build = gulp.parallel(buildScripts, copyLess, mainLess2css,less2css);
 
 exports.build = build;
 

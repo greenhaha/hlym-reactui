@@ -1,6 +1,6 @@
 {
   "name": "hlym-reactui",
-  "version": "1.0.0",
+  "version": "0.0.8",
   "description": "",
   "typings": "lib/index.d.ts",
   "main": "lib/index.js",
@@ -10,7 +10,7 @@
     "email": "a15114101085@gmail.com"
   },
   "repository": {
-    "url": "https://github.com/greenhaha/hlymui.git"
+    "url": "https://github.com/greenhaha/hlym-reactui.git"
   },
   "files": [
     "lib",

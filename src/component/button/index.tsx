@@ -1,60 +1,54 @@
 import React from 'react';
-// import t from 'prop-types';
+import classNames from 'classnames';
+import { useCallback } from 'react';
 
+export type ButtonTypes = 'default' | 'primary' | 'info' | 'success' | 'warning' | 'error';
+export type ButtonSizes = 'tiny' | 'small' | 'medium' | 'large'
 export interface ButtonProps {
-  /**
-   * @description Button的类型
-   * @default 'info'
-   */
-  type?: 'info' | 'primary' | 'success' | 'warning' | 'error',
-  /**
-   * @description Button的尺寸
-   * @default 'medium'
-   */
-  size?: 'tiny' |'small' | 'medium' | 'large',
-  /**
-   * @description Button的自定义class名
-   * @default 'string'｜ -
-   */
-  className?: string,
-  /**
-   * @description Button是否虚线
-   * @default -
-   */
-  dashed?: boolean,
-  /**
-   * @description Button是否禁用
-   * @default -
-   */
-  disabled?: boolean,
-  /**
-   * @description Button的点击时间
-   * @default function
-   */
-  onClick?: (e: any) => void,
-  prefixCls?: string,
-  children: React.ReactNode
+  type?: ButtonTypes;
+  size?: ButtonSizes;
+  children: React.ReactNode;
+  prefixCls?: string;
+  className?: any;
+  onClick?: (e: any) => void;
+  disabled?: boolean;
 }
-
-
-
 const Button: React.FC<ButtonProps> = props => {
   const {
-    type = 'info',
-    // disabled = false,
-    // dashed,
-    // className,
-    // size = 'medium',
-    // prefixCls = 'hl-btn',
-    // onClick,
-    children
-  } = props
+    type = 'default',
+    size = 'medium',
+    disabled = false,
+    children,
+    className,
+    prefixCls = 'cz-btn',
+    onClick,
+  } = props;
+
+  // 处理点击事件
+  const handleClick = useCallback(
+    e => {
+      if (onClick) {
+        onClick(e);
+      }
+    },
+    [onClick],
+  );
+
+  const classString = classNames (prefixCls, {
+    [`${prefixCls}-${type}`]: type && !disabled,
+    [`${prefixCls}-${size}`]: size && !disabled,
+    [`${prefixCls}-disabled`]: disabled,
+    [className]: className,
+  })
 
   return (
-    <button className={`hl-button-${type}`}>
+    <button
+      className = {classString}
+      onClick={handleClick}
+    >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
