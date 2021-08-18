@@ -1,8 +1,8 @@
 import { defineConfig } from 'dumi';
 
 // 此处更换为自己的仓库名
-let base = '/react-ui-library-tutorial';
-let publicPath = '/react-ui-library-tutorial/';
+let base = '/hlym-reactui';
+let publicPath = '/hlym-reactui/';
 
 if (process.env.SITE_BUILD_ENV === 'PREVIEW') {
   base = undefined;
